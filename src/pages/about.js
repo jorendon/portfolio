@@ -12,7 +12,7 @@ const About = ({ data: { about } }) => (
         <h1 className="sheet__title">{about.title}</h1>
         <p className="sheet__lead">{about.subtitle}</p>
         <div className="sheet__gallery">
-          <Img width={'50%'} fluid={about.photo.fluid} />
+          <Img fluid={about.photo.fluid} />
         </div>
         <div
           className="sheet__body"
@@ -36,7 +36,7 @@ export const query = graphql`
       title
       subtitle
       photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 300, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }
       }
